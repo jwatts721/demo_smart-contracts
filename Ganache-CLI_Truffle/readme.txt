@@ -1,8 +1,12 @@
 Prompt:
 Give me a Solidity Tutorial using the Ganache-CLI. Be sure to include tests for every method created in the tutorial.
 
+Ganache App: Local Test Blockchain with Visual GUI
 Ganache-CLI: Local Test Blockchain
-Truffle: Tools for creating Smart Contract Projects, Compiling and Deploying
+Truffle: Tools for creating Smart Contract Projects, Compiling, Deploying and Testing
+         Allows us to write tests in JavaScript (preferred) and Solidity
+         
+         *** Also provides a local test blockchain with the command "truffle develop" running on port 9545
 
 Environment Setup:
 $ npm install -g ganache-cli
@@ -25,6 +29,9 @@ $ truffle compile
 
 Deployment (requires test blockchain):
 $ truffle migrate
+
+    To migrate on a specified network:
+$ truffle migrate --network testnetwork  <-- see network names in your truffle config
 
 Testing:
 $ truffle test
