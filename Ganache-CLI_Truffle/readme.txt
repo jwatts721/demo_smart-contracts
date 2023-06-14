@@ -27,6 +27,8 @@ $ truffle create test YourTestName         # scaffold a test
 Compiling:
 $ truffle compile
 
+- Note: Compiled contracts exist in the "build" directory.
+
 Deployment (requires test blockchain):
 $ truffle migrate
 
