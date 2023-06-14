@@ -80,3 +80,16 @@ $ npx hardhat test
     - hardhat.config.js configured for Alchemy - see config
 
     $ npx hardhat run scripts/deploy.js --network sepolia
+
+Hardhat Boilerplate Project
+https://hardhat.org/tutorial/boilerplate-project
+https://github.com/NomicFoundation/hardhat-boilerplate
+
+- A quick start dApp
+
+- Hardhat Network
+  - You can start the Hardhat network manually with
+    $ npx hardhat node 
+
+    This is similar to Ganache-CLI. 
+    Runs on port 8545
