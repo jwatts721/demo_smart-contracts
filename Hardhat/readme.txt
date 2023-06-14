@@ -64,6 +64,11 @@ $ npx hardhat test
         - You can use Blockchain Node providers such as Infura and Alchemy for
           access to the testnet
 
+    - You need Sepolia ether to your wallet for testing.
+        Alchemy Sepolia Faucet: https://sepoliafaucet.com/
+        Coinbase Sepolia Faucet: https://coinbase.com/faucets/ethereum-sepolia-faucet
+        Infura Sepolia Faucet: https://www.infura.io/faucet/sepolia
+      
     Mainnet (Live Currency)
     - You can use Blockchain Node providers such as Infura and Alchemy
         - These services are providing you with access to an Ethereum Node
@@ -72,4 +77,6 @@ $ npx hardhat test
         - Running nodes provides more distribution of the blockchain, but this may
           not be a possibility to do limit of resources.
 
-    
+    - hardhat.config.js configured for Alchemy - see config
+
+    $ npx hardhat run scripts/deploy.js --network sepolia
