@@ -10,12 +10,19 @@ const provider = new HDWalletProvider({
 
 module.exports = {
   networks: {
+    /*
     development: {
       host: "127.0.0.1",      // Localhost (default: none)
       port: 8545,             // Standard Ganache port (default: none)
       network_id: "*",        // Any network (default: none)
       gas: 6700000,           // Gas limit
     },
+    */
+   develop: {
+    host: "127.0.0.1",
+    port: 9545,
+    network_id: "*",
+   },
     sepolia: {
       provider: () => provider,
       network_id: "*",       // Any network (default: none)

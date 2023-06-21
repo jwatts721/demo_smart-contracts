@@ -53,8 +53,14 @@ $ truffle compile
 
 Run the development console
 $ truffle develop
+    -> you can also do $ truffle console --network develop
+        if you have the "develop" section in your truffle-config.js file
 truffle(develop)> compile
 truffle(develop)> migrate
+
+Run the console on a different network
+$ truffle console --network sepolia
+truffle (sepolia)> 
 
 Run the liteserver development server on port 3000
 $ npm run dev
