@@ -93,3 +93,37 @@ https://github.com/NomicFoundation/hardhat-boilerplate
 
     This is similar to Ganache-CLI. 
     Runs on port 8545
+
+
+Simplified Hardhat Web3 Application
+$ npm init -y
+$ npm install --save-dev hardhat @nomiclabs/hardhat-waffle ethers
+
+ Configure hardhat.config.js
+
+ Create contracts\SimpleContract.sol
+$ npx hardhat compile
+
+ Create test\SimpleContract.js
+
+$ npx hardhat test
+ 
+ Create index.html
+ 
+ Create scripts.js
+ 
+ Create scripts\deploy.js
+
+$ npx hardhat run scripts\deploy.js
+
+ Be sure to copy the address of the deployed contract and save it in your scripts.js file.
+
+ Install live-server
+
+$ npm install live-server
+
+ Run the Web3 application from a web server. 
+
+$ npx live-server
+
+Make sure to configure your wallet to the test network where you deployed the contract.
