@@ -2,7 +2,6 @@ Reference:
 https://hardhat.org/tutorial
 https://decrypt.co/resources/what-is-infura
 
-
 - Make a tutorial directory
 $ mkdir "hardhat-tutorial" && cd "hardhat-tutorial"
 
@@ -81,6 +80,8 @@ $ npx hardhat test
 
     $ npx hardhat run scripts/deploy.js --network sepolia
 
+==================================================================
+
 Hardhat Boilerplate Project
 https://hardhat.org/tutorial/boilerplate-project
 https://github.com/NomicFoundation/hardhat-boilerplate
@@ -94,6 +95,7 @@ https://github.com/NomicFoundation/hardhat-boilerplate
     This is similar to Ganache-CLI. 
     Runs on port 8545
 
+==================================================================
 
 Simplified Hardhat Web3 Application
 $ npm init -y

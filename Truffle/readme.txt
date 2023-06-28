@@ -38,7 +38,6 @@ $ truffle migrate --network testnetwork  <-- see network names in your truffle c
 Testing:
 $ truffle test
 
-
 ==========================================================
 Petshop Project
 - Reference: 
@@ -64,3 +63,24 @@ truffle (sepolia)>
 
 Run the liteserver development server on port 3000
 $ npm run dev
+
+==================================================================
+Simplified Hardhat Web3 Application
+
+$ mkdir truffle-web3
+$ cd truffle-Web3
+$ truffle init
+
+Create a simple smart contract
+$ truffle create contract SimpleContract
+
+Create a test for the contract
+$ truffle create test SimpleContract
+
+Create a deployment script
+$ truffle create migration DeploySimpleContract
+
+TODO: 
+- start local blockchain
+- deploy the contract
+- create web3 project files - in web3 directory - npm init....
