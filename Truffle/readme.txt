@@ -65,7 +65,7 @@ Run the liteserver development server on port 3000
 $ npm run dev
 
 ==================================================================
-Simplified Hardhat Web3 Application
+Simplified Truffle Web3 Application
 
 $ mkdir truffle-web3
 $ cd truffle-Web3
