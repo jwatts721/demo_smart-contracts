@@ -91,8 +91,19 @@ Run the test
 $ test
     - or $ truffle test
 
+Create a "web3" directory
+$ mkdir web3
+$ cd web3
+$ npm init
+$ npm install 
 
+Create web files
+- index.html
+- script.js
+  Modify the script.js file to set the correct contract address
 
+Install Supporting Node Modules
+$ npm install live-server
 
-TODO: 
-- create web3 project files - in web3 directory - npm init....
+Run Live Server Web Server
+$ npx live-server ethers
