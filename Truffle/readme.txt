@@ -80,7 +80,19 @@ $ truffle create test SimpleContract
 Create a deployment script
 $ truffle create migration DeploySimpleContract
 
+Start the Local Truffle Blockchain
+$ truffle develop
+
+Deploy the Contract
+$ migrate
+    - or $ truffle migrate
+
+Run the test
+$ test
+    - or $ truffle test
+
+
+
+
 TODO: 
-- start local blockchain
-- deploy the contract
 - create web3 project files - in web3 directory - npm init....

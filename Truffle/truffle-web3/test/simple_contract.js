@@ -13,8 +13,8 @@ contract("SimpleContract", function (/* accounts */) {
 
   it("should update the message", async function () {
     const simpleContract = await SimpleContract.deployed();
-    const newMessage = "Hello World";
-    await simpleContract.setMessage(newMessage);
+    const newMessage = "Testing 123";
+    await simpleContract.updateMessage(newMessage);
     const message = await simpleContract.getMessage();
     return assert.equal(message, newMessage);
   });
