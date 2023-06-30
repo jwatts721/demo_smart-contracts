@@ -37,3 +37,13 @@ JavaScript Tests
 
 
 DEPLOYING CONTRACTS (Test and Mainnet networks)
+
+
+
+Remix IDE is a good tool for writing Smart Contracts, 
+but for a better development experience, you might want
+to use `hardhat` or `truffle` for local development, testing, 
+and deployment of your contracts. These tools provide a 
+local Ethereum network, which makes it easier to test 
+and debug your contracts. They also provide additional 
+functionalities like console.log in your contracts.
