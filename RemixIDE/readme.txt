@@ -37,7 +37,8 @@ JavaScript Tests
 
 
 DEPLOYING CONTRACTS (Test and Mainnet networks)
-
+- Choose an enviroment that is for either the test network or main net
+  under the Deployment and Run Transactions tab.
 
 
 Remix IDE is a good tool for writing Smart Contracts, 
