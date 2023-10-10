@@ -1,0 +1,16 @@
+PUBLIC 
+    - Outside World
+    - Within Contract 
+    - Derived Contract 
+
+PRIVATE 
+    - Within Contract 
+
+INTERNAL 
+    - Within Contract 
+    - Derived Contract 
+
+EXTERNAL   
+    - Outside World 
+    - Derived Contract 
+
