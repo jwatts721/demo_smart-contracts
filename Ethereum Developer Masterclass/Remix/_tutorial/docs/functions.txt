@@ -1,0 +1,90 @@
+THE PURPOSE OF FUNCTIONS: 
+Functions are used to manipulate the variables in Solidity. 
+The only way to manipulate the values of the variable is through functions.
+
+Example:
+
+function setSum() public {
+
+}
+
+Whenever you manipulate date or change values with a function call, a
+gas fee is paid. 
+
+
+CODE CONVENTION: 
+- It is common for Solidity developers to add underscores ("_") at the
+beginning of the name of function arguments. This is to prevent name 
+conflicts with variables within the function.
+
+function multiply (int _multiplyValue) {}
+
+
+FUNCTION CONVENTIONS:
+- You can apply standard function conventions in Solidity such as using
+  getters and setters. 
+
+  Setter Functions:
+  - Must pay a gas fee because it is making a change 
+  - This is considered a transaction.
+
+  Getter Functions:
+  - The keyword "view" must be added to the function to specify The
+    mutability of the function. This tells solidity that this function
+    does not make a change. 
+  - You cannot make changes to values in a getter (view) function
+  - There is no cost or gas fee for executing this type of function
+  - This is not considered a transaction
+  - The "view" keyword can appear anywhere after the function declaration
+    Examples:
+        function getSum() view public returns(int) {...}
+        function getSum() public view returns(int) {...}
+  
+  - You can also return multiple values in a function 
+    Example: 
+        function getValues() view public returns (int, int) {
+            return (value1, value2);
+        }
+
+    When returning multiple values, you can name the values being returned by
+    specifying named return values. 
+    Example:
+        function getValues() view public returns (int balance, int marks) {
+            return (value1, value2);
+        }
+
+
+  Other Function Types:
+  Not all functions have to be getter/setter. 
+  You can have a function perform a calculation and return a value. 
+  This is considered a transaction, but you can return a value after
+  making value changes. 
+    function update() public returns (int updatedValue) {
+        a = 10;
+        return a;
+    }
+  This type of function will not give you compilation errors, but it
+  is not recommended to write your functions this way. 
+
+
+  Pure Functions:
+  Functions that return native values instead of a reference to a variable
+  should use the "pure" keyword. 
+    function getDefaults() public returns (int, bool) {
+        return (10, true);
+    }
+  This will not set a value nor read a value.
+  This also is not a transaction.
+
+
+  Memory Functions: 
+  For other variable types such as int, bool, etc, we can be sure how much
+  memory is required to store these values. 
+  In the case of a string, the size of the variable is dynamic. 
+  It can be a single character, or a very long value of 128 characters.
+  The compiler has to allocate dynamic memory for this purpose.
+  This is where the memory keyword is required.
+
+  This applies to variables of type "string" and "struct".
+
+  

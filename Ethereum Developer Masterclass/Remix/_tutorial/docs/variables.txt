@@ -1,0 +1,85 @@
+=====================================================
+SOLIDITY NOTES (Remix IDE Version)
+=====================================================
+* Solidity is strictly typed 
+
+* The "pragma" statement in the Solidity file has to match the compiler version in Remix IDE in order to compile properly.
+  An exception is if you use the ">" symbol to identify that you can use a version above what is declared in the "pragma".
+  
+  The "^" symbol represents that the version can go up to the version specified, but can be a compiler version below this version.
+
+* Variable types
+    - integer, string, bool, bytes, arrays, enum, struct, mapping (dictionary in other languages)
+    Decimal values are stored in integers since Solidity doesn't have full support for decimal, double or float values.
+
+* Whenever you change a variable in Solidity, it is considered a transaction, hence a gas fee. 
+    Changing is not allowed. Example:
+
+        int public a = 4;
+
+        a = 10; // <--- THIS IS NOT ALLOWED OUTSIDE OF A FUNCTION!!!
+
+* Solidity supports range types.
+    int8 public b = 32; // <-- VALID = falls between -128 and +127
+    int8 public b = 128; // <-- INVALID - is beyond the range
+
+    int16 <-- supported 
+    int256 <-- equivalent to declaring it as just "int"
+
+* Variable Efficiency (Important)
+    - Consider "int" vs "int8"
+        int8 gas fees will be less than a gas fee for int (or int256).
+
+    - A byte of storage costs. Consider if it is 1mb of storage. 
+        This can get very expensive very quickly. 
+
+    - If you're sure about the value limits, specify "int8" or "uint16".
+
+* Bytes variable types
+    - Converts any string value to hexidecimal format 
+    - Range: bytes, bytes1 to bytes32
+        -- Reference: https://asciitable.com 
+
+    - String comparisons cannot be done directly in Solidity. 
+        Convert to bytes and then compare.
+
+* Arrays
+    - combination of the same type of data, strictly typed
+
+* Mapping 
+    - Key/Value pairs list 
+        - similar to dictionaries or sorted lists in other languages 
+        - The can be of any data type, but MUST be of the same type 
+        
+* Enum 
+    - enumeration of values
+    - Save storage by only providing predefined values 
+    - Confine options for the users
+    - The values cannot be strings and cannot have a space in the name
+    - Enums are custom variable types, defined your own rules of the options available
+    - You can then define variables that reference your custom types 
+
+            enum Cities { NewYork, LosAngeles, WashingtonDC }
+
+            Cities public c1;
+
+    - Enumerations converts the options to indexed integer values (0, 1, 2, 3...).
+        This storage is much more efficient than storing strings which costs more gas.
+
+* Struct 
+    - Consider this to be similar to storing a table of multiple variable types.
+        Think about an Excel spreadsheet which has multiple columns with rows.
+        Simular datatypes together goes to an array.
+        Multiple datatypes together goes to a struct.
+
+        struct Student {
+            string name;
+            bool attendance;
+            int rollNo;
+            int marks;
+        }
+
+        Student public student1;
+
+
+    

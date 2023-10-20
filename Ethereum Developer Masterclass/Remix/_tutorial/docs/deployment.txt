@@ -1,0 +1,18 @@
+TEST ENVIRONMENTS:
+When testing deployments, you deploy on the Remix VM (Merge) network. 
+This is a private blockchain in the browser.
+
+All other Remix VM options are forks of the Mainnet from different regions. 
+See documentation at https://remix-ide.readthedocs.io/en/latest/run.html#environment.
+
+When the browser is reloaded, all data is lost and the blockchain is reset.
+
+
+CONTRACT DEPLOYMENTS:
+It is important to remember the following rules for deploying contracts:
+- Anytime you deploy a contract, you must pay a gas fee
+- Contracts deployed on the blockchain are immutable. They cannot be changed.
+- Everytime you deploy a contract, it receives a new unique contract address.
+  Since the contracts are immutable, changed code will be referenced on the blockchain
+  as a new contract. 
+                  
