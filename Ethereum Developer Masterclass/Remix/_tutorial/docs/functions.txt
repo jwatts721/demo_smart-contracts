@@ -87,4 +87,25 @@ FUNCTION CONVENTIONS:
 
   This applies to variables of type "string" and "struct".
 
-  
+        function setName(string memory _name) public {...}
+
+  This applies when defining a string for setters and getters 
+
+        function getName() public view returns (string memory studentName) {...}
+
+When using local variables in a function, changes to these variables do not require payment
+of gas fees.
+
+  Example: 
+
+    contract SomeContract {
+      int public temp = 5;
+      int public temp2 = 10;
+
+      function swap public () {
+        int swapTemp = temp; // No need to pay gas fees to set the local variable named "swapTemp"
+        temp = temp2;
+        temp2 = swapTemp;
+      }
+    }
+

@@ -82,4 +82,8 @@ SOLIDITY NOTES (Remix IDE Version)
         Student public student1;
 
 
-    
+Global vs Local
+- All variables defined at the contract scope are considered global variables
+- All variables defined within a function are considered local variables
+
+    No need to pay a gas fee for a local variable.
