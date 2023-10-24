@@ -1,0 +1,50 @@
+PAYABLE:
+- A smart contract can hold money.
+  The only currency that the smart contract can hold is ETH. 
+
+PAYABLE FUNCTIONS AND ADDRESSES: 
+
+In order for smart contract to receive ETH, the function executed must be "payable".
+In Remix, you can select the denomination for sending to the cotract. 
+
+    public payMoney() public payable {
+        // Do something...
+    }
+
+Once you send money to the contract, the contract will hold that amount. 
+
+You can write a function to display how much the contract is holding. 
+
+    public getBalance() public view returns (uint) {
+        return address(this).balance;
+    }
+
+In Remix, when you specify a value, regardless of denomination, and you execute
+the function, it must be a payable function. 
+If it is not, you will receive a VM error. 
+
+    Test:
+    - Change the value to 10 Ether and execute the "setVariables" function. - FAIL
+    - Change the value to 10 Ether and execute the "payMoney" function. - SUCCESS
+
+The balance that is returned is in the "Wei" denomination which is the smallest
+denomination of Ether. 
+
+
+How to send money from a contract to an address. 
+    - The "payable" keyword is only required when you want the contract to receive Ether.
+    - The "payable" keyword is NOT required when you want the contract to send Ether to an address.
+    - An address variable must be defined.
+        It must be a payable address because it is defined as able to receive money.
+
+        address payable public investor;
+
+        function sendMoney() public {
+            // Sends the entire balance of the contract to the investor
+            investor = 0xAb8483F64d9C6d1EcF9b849Ae677dD3315835cb2; // This is a user address
+            investor.transfer(address(this).balance);
+        }
+
+        You can also specify a specific amount to send. 
+            
+            investor.transfer(2 ether);
