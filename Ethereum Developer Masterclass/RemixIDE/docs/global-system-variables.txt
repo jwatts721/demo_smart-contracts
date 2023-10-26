@@ -1,0 +1,39 @@
+Solidity has a set of predefined globals that are useful for giving information about the smart contract. 
+
+A few examples:
+
+- block
+- msg
+- tx
+
+===============================================
+
+function getValues() public view returns(
+            uint blockNumber, 
+            uint blockTimestamp, 
+            address msgSender, 
+            bytes calldata msgData // calldata helps get data from the blockchain
+        ) {
+    // Block number - uint
+    // Block timestamp - uint
+    // Message Sender - address   <-- the address of the person calling the function, not the person who created the contract
+    // Message Data - bytes       <-- data being passed from the user to the function
+    return (block.number, block.timestamp, msg.sender, msg.data);
+}
+
+Message Value: 
+    - The message value that is paid into the contract is available in msg.value 
+
+uint msgValue public;
+function payToContract () payable public {
+    msgValue = msg.value;
+}
+
+This function allows you to set the msgValue so you can inspect the value of the contract.
+Note: The latest version of RemixIDE has native support for viewing the value of the contract.
+      However, programatically you may require this to allow external applications to check the value of the contract.
+
+References: 
+https://docs.soliditylang.org/en/latest/units-and-global-variables.html
+https://solidity-docs-kr.readthedocs.io/en/latest/units-and-global-variables.html
+https://soliditytips.com/articles/global-variables-msg-this-block/
