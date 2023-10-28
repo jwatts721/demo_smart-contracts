@@ -1,0 +1,39 @@
+Fallback Functions: 
+====================================================
+Scenario: 
+- In your wallet (ie: MetaMask), you send funds to a smart contract
+  address directly, instead of calling the payable function for sending
+  funds to the smart contract.
+
+  Result: 
+    Those funds will be lost!!!!
+    The balance of the smart contract will remain unchanged, as it will
+        not receive the funds.
+    No one will be able to retrieve these funds.
+
+The fallback function is there to ensure that if someone sends funds directly to the contract
+instead of calling an explicit payable function, it will capture what is sent to the contract
+and add it to the balance.
+        
+Function Requirements:
+- It must be external
+  External functions can only be called from outside of the contract
+  There is no function within the smart contract that can call the fallback function 
+
+- It must be payable
+
+
+
+TEST:
+- Deploy the unsafe contract without fallback to a test network
+- In Metamask, send funds to the contract directly without a fallback
+  - Test that the contract balance has not changed
+
+- Deploy the unsafe contract with fallback to a test network
+- In Metamask, send funds to a contract with a receive and fallback function
+  - Test that the contract balance changes and receives the funds
+
+
+
+NOTE: When sending through MetaMask, there is built-in protection which prevents you from interacting with a contract
+      that does not have a fallback (or receive) function.
