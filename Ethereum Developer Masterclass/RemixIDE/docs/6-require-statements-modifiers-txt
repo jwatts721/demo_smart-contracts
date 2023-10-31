@@ -1,0 +1,77 @@
+REQUIRE STATEMENT: 
+
+Solidity provides us with the "require" keyword to evaluate conditionals
+reducing the amount of code that needs to be written. 
+
+Example: 
+We want to restrict getting the contract balance to the owner only. 
+
+Using If/Else statements:
+    function getContractBalance() public view returns (uint) {
+        if (msg.sender == owner) {
+            return address(this).balance;
+        }
+        else {
+            revert(); // This just exits the function
+        }
+    }
+
+Enhancing with the "require" statement:
+    function getContractBalance() public view returns (uint) {
+        require(msg.sender == owner);
+        return address(this).balance;
+    }
+
+You can also send back custom messages to the user:
+
+Example:
+    require(msg.sender == owner", "Only the owner can retrieve the balance.");
+
+
+MODIFIERS:
+Closely associated with the "require" statement.
+
+When you are using similar require statements, you want to reduce this using modifiers. 
+
+Modifier can convert require statements into a single word.
+
+Example: 
+
+    function swap() public {
+        require(msg.sender == owner, "Only the owner can call this function");
+        ...
+    }
+
+    function getBalance() public view returns (int16) {
+        require(msg.sender == owner, "Only the owner can call this function");
+        ...
+    }
+
+We can streamline the above code using modifiers. 
+
+    modifier onlyOwner() {
+        require(msg.sender == owner, "Only the owner can call this function");
+        _;  // <-- all modifiers require an underscore at the end of the function
+    }
+
+    function swap() public onlyOwner {
+        ...
+    }
+    function getBalance() public onlyOwner{
+        ...
+    }
+
+USE OF THE UNDERSCORE:
+- The "underscore" is a placeholder for the code that exists in functions denoted with 
+  a modifier name. This happens transparently in the backend. 
+
+  Example: 
+
+  function swap() public onlyOwner {
+    ... // <-- all code here is copied to be executed at the place of the "_" underscore in the modifier
+  }
+
+  modifier onlyOwner() {
+    require...
+    _; // <-- all functions using this modifier have their code executed here
+  }

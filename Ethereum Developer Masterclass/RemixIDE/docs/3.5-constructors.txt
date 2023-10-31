@@ -1,0 +1,4 @@
+CONSTRUCTORS:
+
+- The concept of constructors in Solidity is the same as what a constructor 
+  is in all other languages.

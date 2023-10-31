@@ -1,0 +1,54 @@
+EVENTS:
+
+What Are Events? 
+Events are equivalent to JavaScript callbacks. 
+
+When the contract is complete, something must be executed when the execution is done. 
+
+There can be a success event or a failure event depending on the scenario. 
+
+
+Subsribing to Events:
+The owner can also "subscribe" to an event and be notified when the event is triggered. 
+
+
+Log Data: 
+Everytime an event is returned to the user, the data about the event is stored in the blockchain. 
+This is what's known as logdata.
+This becomes low-cost storage, instead of storing the data in a struct. 
+
+This log-data is only available to the consuming apps and NOT from the smart-contract itself. 
+The main aim of log data is to notify the user. Data not available to the contract. 
+
+
+EMIT:
+Events are returned back to the user using the "emit" keyword. 
+
+    event studentRegistered (string name, bool attendance, int rollNo, int marks);
+
+    emit studentRegistered(_name, _attendance, _rollNo, _marks);
+
+This is beneficial for returning data to the user immediately rather than storing it in 
+the blockchain for retrieval later, because this will have a transaction fee associated 
+with storing this data.
+
+Upon testing, you can click on the transaction in Remix to see the event data
+under the logs section.
+
+logs	[
+	{
+		"from": "0xd9145CCE52D386f254917e481eB44e9943F39138",
+		"topic": "0x94717ac0a3e5492b4e020060f91cc7663d837b6d8f86ec67198637d39bf053c5",
+		"event": "studentRegistered",
+		"args": {
+			"0": "Bobby",
+			"1": true,
+			"2": "10",
+			"3": "89",
+			"name": "Bobby",
+			"attendance": true,
+			"rollNo": "10",
+			"marks": "89"
+		}
+	}
+]
