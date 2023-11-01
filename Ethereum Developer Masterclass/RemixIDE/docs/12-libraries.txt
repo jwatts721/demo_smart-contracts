@@ -1,0 +1,34 @@
+LIBRARIES: 
+
+Libraries in Solidity work the same as they do in other programming languages. 
+
+Addresses:
+- Rules
+- Security
+- Complex Concepts
+
+You must use the "library" keyword to define a library. 
+Ensure that any library you create is audited and fully tested.
+
+Example Library:
+    library Math {
+        function div(int a, int b) public pure returns (int) {
+            require(b != 0, "The denominator is zero");
+            return a / b;
+        }
+    }
+
+After the implementation of the library is complete, you can use the "using" keyword to reference it. 
+
+    using Math for int;
+    ...
+    return a.div(b);
+
+
+See libaries.sol.
+
+More commonly, there are standardized libraries that have safe math operations.
+
+- Open Zeppelin
+    - Safe Math operations
+    - Can Create ERC20 Tokens
