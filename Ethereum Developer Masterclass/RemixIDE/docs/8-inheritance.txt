@@ -1,0 +1,36 @@
+INHERITANCE:
+
+Same concept as inheritance in other object oriented programming languages.
+
+Whenever you deploy child contracts, all parent contracts are also deployed.
+
+Supported inheritance:
+- Single inheritance
+- Multiple inheritance
+- Parent, Grandparent Inheritance 
+
+When inheriting a contract that has a constructor with parameters, you can declare the parameter and set the value
+in the inheritance call. 
+
+Example 1: 
+
+    contract US is Country(9), India {
+        ...
+    }
+
+Example 2: 
+
+    contract US is Country, India {
+        ...
+        constructor() Country (9) public {
+
+        }
+    }
+
+Example 3:
+    contract US is Country, India {
+        ...
+        constructor (int _a) Country(_a * _a) public {    // can manipulate the argument before it gets into the contract
+
+        }
+    }
