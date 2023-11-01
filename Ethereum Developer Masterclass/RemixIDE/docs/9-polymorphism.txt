@@ -1,0 +1,22 @@
+POLYMORHPHISM:
+
+When contract has different behaviors in when different conditions exist.
+
+Similar to how people behave different in different environments and settings. 
+
+
+
+Example: 
+
+    contract Poly {
+        function sum(int a, int b) public pure returns (int) {
+            return a + b;
+        }
+
+        function sum(int a, int b, int c) public pure returns (int) {
+            return a + b + c;
+        }
+    }
+
+Notice how the function "sum" is defined twice. 
+I will behave differently depending on the number of arguments that are passed in.
