@@ -1,0 +1,41 @@
+INTERFACES:
+
+The same concept as in other object oriented programming languages.
+Defines a set of rules that must be followed the contracts that consume it. 
+
+- Interfaces cannot define variables
+- Interfaces cannot inherit
+- Interfaces can be inherited 
+- Interfaces can only contain function declarations
+
+Use the keyword "interface" instead of "contract" to define an interface. 
+When defining the functions in the contract, you must declare them as "external" because
+they cannot be used by the contract, ie: you cannot define it as "public".
+
+    interface Int {
+        function recordName(string memory name) external;
+    }
+
+For a contract to use the interface, you must use the "is" keyword. 
+
+    contract A is Int {...}
+
+In order to implement the function defined in the contract, you must use the "override" keyword.
+
+    function recordName(string memory name) override public {...}
+
+Each contract that uses the interface may have different implementations. 
+
+    contract A is Int {
+        string[] public students;
+        function recordName(string memory name) override public {
+            students.push(name);
+        }
+    }
+
+    contract B is Int {
+        mapping(string=>bool) public students;
+        function recordName(string memory name) override public {
+            students[name] = true;
+        }
+    }

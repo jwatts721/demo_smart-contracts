@@ -1,5 +1,0 @@
-Important Usage for Constructors: 
-
-- Constructors are good for when you want to set an initial value for the contract. 
-  This is run only once when the contract is deployed. 
-
