@@ -93,6 +93,7 @@ web3.eth.estimateGas({ data: "0x" + bytecode })
           // Call the sum function with 2 arguments
           console.log("Calling the sum function, add 10 and 20...");
           addContract.methods.Sum(10, 20).send({ from: defaultAccount }).then((receipt) => {
+            console.log("Transaction Receipt: ", receipt);
             addContract.methods.GetSum().call().then((sum) => {
               console.log("Final Sum: ", sum);
             });
