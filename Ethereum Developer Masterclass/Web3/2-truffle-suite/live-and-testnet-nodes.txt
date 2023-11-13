@@ -1,0 +1,18 @@
+LOCAL TEST NODE:
+- Ganache
+- Hardhat
+- Truffle Develop
+- Remix
+
+LIVE NODES:
+- Metamask
+- Coinbase Wallet
+
+FULL NODES: 
+- Infura
+- Alchemy
+
+Using Infura and Other Node Providers:
+- Provides an API endpoint for connecting to the full blockchain node.
+- Modify the truffle-config.js to configure Infura connectivity.
+    - You need to log in to retrieve the Web3 API key
