@@ -63,4 +63,73 @@ https://trufflesuite.com/
                 2 - Run: (preferred)
                     $ truffle migrate --reset
 
+            Since your Truffle configuration will require you seed phrase as the mnemonic value,
+            you should include it in a .env or .secret file that has limited access. 
+            NEVER commit this to source control.
+
+            Migrating to Specific Networks:
+            example: deploying to sepolia
+
+            $ truffle migrate --network sepolia
+
+                Make sure to have all required NPM packages installed
+                    example: $npm install @truffle/hdwallet-provider
+
+    - Creating a Front-End to Interact With The Deployed Contract
+        - We will leverage Truffle Boxes to use an already scaffolded React Application 
+            - https://trufflesuite.com/boxes/
+
+        Within the "frontend" directory, execute the following command:
+            $ truffle unbox react       
+
+        As of this writing (11/14/2023), the box configuration has the following directories:
+            - client - the frontend React application
+            - truffle - a sample Truffle project
+
+        DEPLOY THE CONTRACT (LOCAL DEVELOPMENT BLOCKCHAIN)
+        - Reconfigre the truffle-config.js to match the port for the development network. 
+
+        - The unboxing has the Truffle project pre-configured to build the contracts into the Node.js app path
+
+        - Modify the Solidity compiler version in truffle-config.js
+
+        - After compilation, the contract JSON files will be under ./src/contracts 
+
+        - Run Truffle migration, for your local development environment. Make sure Ganache is running. 
+            $ truffle migrate
+
+        RUN THE APPLICATION
+        Note: This version of the Truffle Box is newer than the classroom example. See notes below.
+            $ npm run start
+
+            The React application will run and display the URL.
+            When you open the application, it will ask to connect to your Metamask.
+
+            In Metamask, change the test network to your local blockchain running on Ganache
             
+            Import one of the accounts in Ganache into your Metamask wallet (for testing)
+                - Import using the private key
+
+        READING AND WRITING TO THE CONTRACT
+        - Modify a value in SimpleStorage.sol (the contract value)
+            - You should see the value change. 
+                - Metamask will not prompt you as this is a "view" function 
+
+        - Perform a write. Enter a value in the box of the "write" button and then click it.
+            IMPORTANT: Make sure to connect the proper test account which has the test ETH.
+            - Metamask will prompt you for paying the gas fee so that you can write a value to the blockchain.
+
+        - This version of the application is already scaffolded to do what the "additional code" does as demonstrated
+          in the classroom. 
+        - View the functionality in the React "Demo" component.
+            Read/Write Buttons - Demo/ContractBtns.jsx
+            
+            The code for communicating with the blockchain is defined in the EthContext
+
+
+
+        
+
+
+
+        

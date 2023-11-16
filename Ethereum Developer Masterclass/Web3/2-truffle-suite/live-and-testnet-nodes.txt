@@ -16,3 +16,14 @@ Using Infura and Other Node Providers:
 - Provides an API endpoint for connecting to the full blockchain node.
 - Modify the truffle-config.js to configure Infura connectivity.
     - You need to log in to retrieve the Web3 API key
+
+Since your Truffle configuration will require you seed phrase as the mnemonic value,
+you should include it in a .env or .secret file that has limited access. 
+NEVER commit this to source control.
+
+Deploying to Specific Network 
+
+    $ truffle migrate --network sepolia
+
+Make sure to have all required NPM packages installed
+    example: npm install @truffle/hdwallet-provider
