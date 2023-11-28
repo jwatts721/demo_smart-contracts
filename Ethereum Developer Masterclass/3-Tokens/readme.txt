@@ -1,58 +1,7 @@
-https://www.udemy.com/course/ethereum-developer-masterclass/learn/lecture/21955740?start=15#overview
-
-Remix IDE:
-Deployment tab is the most important to understand.
-Environment: 
-  - JavaScript VM (for TESTING, running local test blockchain in the browser)
-  - Injected Web3
-  - Web3 Provider
-
-The JavaScript VM is used for testing in a local blockchain running within the browser.
-You can compile and deploy here without transaction fees.
-This test blockchain comes with dummy wallet accounts in the "Accounts" dropdown.
-Just like Ganache CLI, Hardhat and Truffle provide a local test blockchain.
-All accounts default to 100 ETH as default. 
-
-MetaMask:
-- Web3 Based wallet
-These are light nodes within the network.
-Unlike full nodes which are a full copy of the Ethereum blockchain.
-This allows use to run functions on the "light" node.
-
-Types of Accounts on Ethereum:
-- Unlike Bitcoin, which only has one type of account because Bitcoin is the only asset,
-Ethereum has Externally Owned Accounts and Contract Accounts.
-Externally Owned Accounts = accounts in our wallets, owned by users
-    Has a public and a private key
-Contract Accounts = Accounts for Smart Contracts
-    Only has a public key, there is no private key
-
-Types of Networks:
-- Ethereum Mainnet (the main Ethereum network, fees apply)
-
-    Local Test Network 
-        - local blockchain in isolated environment - no access from the outside
-        - each test account comes starts with 100 ETH 
-- JavaScript Network
-- Ganache
-- Hardhat
-- Truffle Develop
-
-    Public Test Networks 
-        - best for testing in the public space, particulary for teams of developers
-        - requires obtaining ETH from test faucets
-- JavaScript Network
-- Rinkeby TestNet
-- Kovan TestNet 
-- Ropsten TestNet 
-- Goerli TestNet 
-
-NOTE: One wallet account address can be used for ALL networks. 
-      You have to be careful that you DO NOT use real currency on a test network, because this currency will be lost.
-      I would test with a different account than the one you use real currency.
-
 Token Standards:
-- ERC 20 
+*** ERC20 and ERC721 are the most popular token standards ***
+
+- ERC20 
     - ERC = Ethereum Request for Comments
         - Whenever you want to set a standard, you create an E.I.P. (Ethereum Improvement Proposal).
             - Proposal is negotiated on
@@ -91,5 +40,14 @@ Token Standards:
         - allowance(address owner, address delegate) returns (uint) - How much the owner delegated/approved to the delegate (ie: Binance)
         - transferFrom (address owner, address buyer, uint numTokens) returns (bool) - Used by exchanges to send money from owner to buyer
 
-        
-            
+- ERC721 
+    - Differences between ERC20 and ERC721
+        - ERC20 - tokens are fungible, not unique in value, like FIAT currency
+        - ERC721 - tokens are non-fungible, unique in value, for NFTs
+    
+    Example: CryptoKitties
+
+    - ERC20 compatible functions exist in this token protocol
+
+
+
