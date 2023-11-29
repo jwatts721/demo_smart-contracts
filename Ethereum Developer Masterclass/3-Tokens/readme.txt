@@ -1,7 +1,9 @@
 Token Standards:
 *** ERC20 and ERC721 are the most popular token standards ***
 
-- ERC20 
+--------------------------------------------------------------
+ERC20 
+--------------------------------------------------------------
     - ERC = Ethereum Request for Comments
         - Whenever you want to set a standard, you create an E.I.P. (Ethereum Improvement Proposal).
             - Proposal is negotiated on
@@ -40,7 +42,9 @@ Token Standards:
         - allowance(address owner, address delegate) returns (uint) - How much the owner delegated/approved to the delegate (ie: Binance)
         - transferFrom (address owner, address buyer, uint numTokens) returns (bool) - Used by exchanges to send money from owner to buyer
 
-- ERC721 
+--------------------------------------------------------------
+ERC721
+--------------------------------------------------------------
     - Differences between ERC20 and ERC721
         - ERC20 - tokens are fungible, not unique in value, like FIAT currency
         - ERC721 - tokens are non-fungible, unique in value, for NFTs
@@ -49,5 +53,29 @@ Token Standards:
 
     - ERC20 compatible functions exist in this token protocol
 
+--------------------------------------------------------------
+Open Zeppelin
+--------------------------------------------------------------
+https://openzeppelin.com
+https://github.com/OpenZeppelin
+https://github.com/OpenZeppelin/openzeppelin-contracts
+
+* Defines a standard library for secure smart contracts
+
+In RemixIDE, you can use the OpenZeppelin libraries (any any other libraries) as a direct import. 
+When using Visual Studio Code, you have to download the full GIT repository to perform the import.
+
+Imports can be performed using the following methods:
+
+    import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/utils/math/Math.sol";
+
+Using this method, it will import and read all dependendies remotely. 
+This likely only works in RemixIDE. 
+
+
+    import "@openzeppelin/contracts/utils/math/SafeMath.sol";
+
+Using this method, all dependendies will be pulled down locally and stored in a directory named ".deps".
+It pulls the dependendies from GitHub and NPM where relevant. 
 
 
