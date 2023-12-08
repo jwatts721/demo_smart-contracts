@@ -1,0 +1,6 @@
+{
+  "devDependencies": {
+    "@nomicfoundation/hardhat-ethers": "^3.0.5",
+    "@openzeppelin/hardhat-upgrades": "^2.5.0"
+  }
+}

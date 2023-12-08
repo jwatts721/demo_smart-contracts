@@ -1,0 +1,15 @@
+.exit 
+(await box.retrieve()).toString();
+await box.increment();
+(await box.retrieve()).toString();
+const box = await BoxV2.attach('0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0');
+const BoxV2 = await ethers.getContractFactory('BoxV2');
+.exit
+.quit
+exit;
+exit();
+exit 
+quit 
+(await box.retrieve()).toString();
+const box = await Box.attach('0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0');
+const Box = await ethers.getContractFactory('Box');

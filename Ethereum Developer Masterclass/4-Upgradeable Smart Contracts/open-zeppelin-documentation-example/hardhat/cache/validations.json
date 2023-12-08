@@ -1,0 +1,86 @@
+{
+  "version": "3.4",
+  "log": [
+    {
+      "contracts/BoxV2.sol:BoxV2": {
+        "src": "contracts/BoxV2.sol:5",
+        "version": {
+          "withMetadata": "6f37f2ca94d7b0e56f7b82e71cb4ee7acedfeabf8472b4d6f0d2e0dc5c8e95f9",
+          "withoutMetadata": "4043e04eb820b252ab522727be9f6f584dc8a242c229c3fa392cf6988fc9ef8a",
+          "linkedWithoutMetadata": "4043e04eb820b252ab522727be9f6f584dc8a242c229c3fa392cf6988fc9ef8a"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "store(uint256)",
+          "retrieve()",
+          "increment()"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [
+            {
+              "label": "_value",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_uint256",
+              "contract": "BoxV2",
+              "src": "contracts/BoxV2.sol:6"
+            }
+          ],
+          "types": {
+            "t_uint256": {
+              "label": "uint256",
+              "numberOfBytes": "32"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": true,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.19"
+      }
+    },
+    {
+      "contracts/Box.sol:Box": {
+        "src": "contracts/Box.sol:5",
+        "version": {
+          "withMetadata": "88a5084022239e517e008ff6fd1e97127c6add6b47a5d1e7bc6eade8d4f09d68",
+          "withoutMetadata": "cba9f8cf52e3c449631a04ea218a6cedcaf7c366669cfc257c89a008266c768f",
+          "linkedWithoutMetadata": "cba9f8cf52e3c449631a04ea218a6cedcaf7c366669cfc257c89a008266c768f"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "store(uint256)",
+          "retrieve()"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [
+            {
+              "label": "_value",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_uint256",
+              "contract": "Box",
+              "src": "contracts/Box.sol:6"
+            }
+          ],
+          "types": {
+            "t_uint256": {
+              "label": "uint256",
+              "numberOfBytes": "32"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": true,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.19"
+      }
+    }
+  ]
+}
