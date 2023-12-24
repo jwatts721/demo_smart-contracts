@@ -16,12 +16,14 @@ contract ExampleContract is usingProvable {
     }
 
     function __callback(bytes32 myid, string memory result) public {
+        emit LogNewProvableQuery("Starting __callback()...");
         if (msg.sender != provable_cbAddress()) revert();
         ETHUSD = result;
-        emit LogPriceUpdated(result);
+        emit LogPriceUpdated(string.concat("Current ETH Price: ", result));
     }
 
     function updatePrice() public payable {
+        emit LogNewProvableQuery("Updating price...");
         if (provable_getPrice("URL") > address(this).balance) {
             emit LogNewProvableQuery("Provable query was NOT sent, please add some ETH to cover for the query fee");
         } else {
