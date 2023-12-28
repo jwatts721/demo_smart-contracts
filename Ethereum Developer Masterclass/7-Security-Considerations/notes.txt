@@ -1,11 +1,81 @@
----------------------
+---------------------------------------------------------------
 Overflow Attack
----------------------
+---------------------------------------------------------------
 Example:
     The odometer in your car is at 999999.9. 
     Once you go over 1M / 1KM, it resets to 000000.00
 
 
----------------------
+---------------------------------------------------------------
 Rentrancy Attack
+---------------------------------------------------------------
+PROBLEM: 
+
+- Contract Name: The DAO
+    This is the parent contract 
+
+- Investors are also contracts which invest funds into the parent contract. 
+
+- The HACK is to create an "investor" contract which includes a fallback function that 
+  calls the withdraw() function. 
+This then goes into an infinite loop which will continue to withdraw funds until
+there are no funds left. 
+
+
+Parent Contract Code
 ---------------------
+function withdraw() public
+{
+    ...
+    I3.transfer(address balI3); // <-- this allows for re-entrance, no check on balI3
+    balI3 = 0;
+    ...
+}
+
+
+Investor Contract (by the Hacker)
+---------------------------------
+{
+    ...
+    fallback () {
+        withdraw();
+    }
+    ...
+}
+
+
+SOLUTION: 
+Parent Contract Code
+--------------------
+function withdraw() public {
+    uint temp = balI3; // <-- in this example, the balance is updated before the transfer
+    balI3 = 0;         //     A fallback would only allow a transfer of 0
+    I3.transfer(temp);
+}
+
+See ContractTransfer.sol
+
+
+---------------------------------------------------------------
+Transaction Origin
+---------------------------------------------------------------
+msg.sender = address of the person calling the contract
+
+When contracts call other contracts. 
+
+    UserA calls ContractA -- msg.sender = UserA
+    ContractA calls Contract B -- msg.sender = ContractA
+
+
+tx.origin = address of the original person calling all contracts
+
+    UserA calls ContractA -- tx.origin = UserA
+    ContractA calls Contract B -- tx.origin = UserA
+
+    This is not recommended to use for security and privacy reasons.
+
+
+---------------------------------------------------------------
+Cross Function Race Attack
+---------------------------------------------------------------
+See the file CFRA.sol.
