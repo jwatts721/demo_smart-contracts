@@ -1,0 +1,37 @@
+REASONS FOR SECURITY AUDITS
+-----------------------------------------
+Two types of errors:
+- Compilation / Syntax errors
+- Logical Errors
+
+The compiler will take care of the syntax errors. 
+However, logical errors can go into production undiscovered.
+
+    Example:
+        msg.sender == owner...
+
+Security Considerations
+    - Checking for vulnerabilities to overflow, re-entrancy, etc. attacks 
+
+Security Anaylysis is required.
+
+Tools:
+- Slither
+- Mythril
+- MythX
+- SmartCheck
+- Echidna
+- Ethereum
+- Manticore
+- Oyente
+- Remix
+- Securify
+- Smart contract audit 
+- Truffle
+
+SmartCheck (deprecated as of 2020)
+-------------------------------------------------------
+The video is outdated. 
+SmartCheck is now available at GitHub as a CLI tool as of 12/27/2023.
+
+https://github.com/smartdec/smartcheck
