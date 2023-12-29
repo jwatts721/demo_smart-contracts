@@ -1,0 +1,30 @@
+WHAT IS GETH?
+- Stands for "Go Ethereum".
+- A Go implementation of Etherum which is a gateway into the decentralized web
+- It is an Ethereum execution client which can handle tansactions, deployment and execution
+  of smart contracts and contains the embedded EVM (Ethereum Virtual Machine)
+- This allows you to run your own Ethereum node (public and private)
+
+DOWNLOAD FROM
+- https://geth.ethereum.org/ 
+
+
+INTERACTING WITH GETH
+- Options
+    $ geth --help 
+
+- Starting the JavaScript Console
+: To download with the Mainnet blockchain, and run a full node
+:   Not recommended unless you have massive storage
+    $ geth console
+
+: Run without connection to peers to run as a local blockchain 
+    $ geth console --nodiscover
+
+https://geth.ethereum.org/docs/fundamentals/les
+: Run a light server
+    $ geth --light.serve 50 --txlookuplimit 0
+
+
+
+
