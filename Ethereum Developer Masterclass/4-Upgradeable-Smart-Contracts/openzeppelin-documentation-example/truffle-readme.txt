@@ -1,4 +1,7 @@
-=> TRUFFLE
+=> TRUFFLE:
+ - IMPORTANT NOTE: As of this writing (1/30/2024), it is best to use Truffle with NodeJS v18.
+                   There are library reference issues with higher versions.
+
     Initialize a Truffle Project:
         $ npx truffle init
 
