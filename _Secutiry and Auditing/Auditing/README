@@ -1,0 +1,15 @@
+Static Analysis
+- https://github.com/crytic/slither
+
+$ sudo add-apt-repository ppa:ethereum/ethereum
+$ sudo apt-get update
+$ sudo apt-get install solc
+
+$ pip install slither-analyzer
+$ python -m slither .           # Run Slither on the directory where the source code is located
+
+
+Fuzz Testing
+- https://github.com/crytic/echidna
+
+$ echidna ./contracts/MyContract.sol
