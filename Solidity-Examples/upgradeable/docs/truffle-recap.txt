@@ -1,0 +1,18 @@
+CREATE MIGRATION
+    $ truffle create migration <migration_name>
+    $ mv migrations/<ts_migration_name> migrations/<step_migration_name>
+
+RUN MIGRATION ONE STEP AT A TIME
+    $ truffle migration --network developent --f 1 --to 1
+
+TRUFFLE CONSOLE
+    $ truffle console --network development
+
+TESTING AT THE CONSOLE
+
+    truffle(develop)> const box = await Box.deployed();
+    truffle(develop)> const boxV2 = await BoxV2.at(box.address);
+    truffle(develop)> (await boxV2.retrieve()).toString();
+    truffle(develop)> await boxV2.increment();
+    truffle(develop)> (await boxV2.retrieve()).toString();
+    

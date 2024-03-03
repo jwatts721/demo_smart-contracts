@@ -1,0 +1,35 @@
+OFF-CHAIN TIMERS WITH ON-CHAIN VALIDATION
+n this method, you set a timer in your off-chain application (e.g., JavaScript) to periodically trigger a function call in your smart contract.
+Here’s an example in JavaScript:
+JavaScript
+
+function sendTx() {
+    myContract.methods.myFunction().send();
+}
+
+setInterval(sendTx, 5 * 1000 * 60); // Execute every 5 minutes
+AI-generated code. Review and use carefully. More info on FAQ.
+In your Solidity smart contract, you can validate that the action is performed only if a certain time has passed since the last execution:
+pragma solidity ^0.8;
+
+contract MyContract {
+    uint256 lastRun;
+
+    function myFunction() external {
+        require(block.timestamp - lastRun > 5 minutes, "Need to wait 5 minutes");
+        // Perform the desired action
+        lastRun = block.timestamp;
+    }
+}
+
+Note that there’s a delay between sending a transaction from your app and the actual inclusion of that transaction in a block by a miner.
+
+
+
+
+
+
+CHAINLINK KEEPERS
+Chainlink Keepers is a decentralized service that acts like a cron job for executing functions in your contract at specified intervals.
+It’s more expensive than the off-chain approach, but it’s fully decentralized.
+You can configure it to execute your function at regular intervals, such as every 5 minutes.

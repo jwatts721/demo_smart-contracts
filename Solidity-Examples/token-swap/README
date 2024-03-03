@@ -1,0 +1,18 @@
+===========================
+TOKEN SWAP TESTING
+===========================
+NOTE: Swapping is unavailable using a Development Node.
+      Using Hardhat, Truffle, and Ganache will not work for swapping tokens.
+
+      The reason is because the tokens are not real and do not have a value.
+      The network is unable to return quotes for GAS fees.
+
+Sepolia Deployments
+===================
+SAVM = 0x77726BFbE61B6ad7463466fD521A3A4B89B0EFd8
+WETH = 0x097D90c9d3E0B50Ca60e1ae45F6A81010f9FB534
+TokenA = 0xE49fa4E1f911b18EdB544ed17b0041Af30B338AE
+TokenB = 0xf555Dc96dAfa761caD5b9F46703BeC1D125EF5c3
+TokenSwap (A/B) = 0xce2b77b5e5CE1da824D200D692be5BB421c9a40A
+TokenSwap (A/WETH) = 0x8A0c6785d9C299B63b6286f4363E7Fb5ad60027b
+

@@ -1,0 +1,79 @@
+{
+  "manifestVersion": "3.2",
+  "admin": {
+    "address": "0x960d270860b69a9DFBEe51C0CA4Ec387Da8eBa07",
+    "txHash": "0x9cb93d16e9261f9b5d5467b2d390556a93a0400b0cf7b8ea3a6e863f90784457"
+  },
+  "proxies": [
+    {
+      "address": "0xdc46cD3A733b318B89Fe6422FB4ccc6bcb7a7a01",
+      "txHash": "0x23202333fd58661271bd713120d6e313d269a0d5e8bd44f1f825fd9592ced896",
+      "kind": "transparent"
+    }
+  ],
+  "impls": {
+    "221b83a1f5bbbabe4eb1af1e15f8208aa3a4b539fe6b73dfd9e1f305ad00645f": {
+      "address": "0xF7ce3e4D3f4E1B023C76FE5564283Ce4FA0ba553",
+      "txHash": "0x28ba5af20a81ea01c10c539d72f34358da325f7762d1d0f678e6c5e447b471cb",
+      "layout": {
+        "solcVersion": "0.8.22",
+        "storage": [
+          {
+            "contract": "Box",
+            "label": "_value",
+            "type": "t_uint256",
+            "src": "../project:/contracts/Box.sol:5"
+          }
+        ],
+        "types": {
+          "t_uint256": {
+            "label": "uint256"
+          }
+        },
+        "namespaces": {}
+      }
+    },
+    "f78fe142bbba430f412774622738df10741b21b59d6f808514d90b9b499bd269": {
+      "address": "0x8420161b1BC1B02ED0Bf21705d1aF4A2Edc8f491",
+      "txHash": "0x29ce5f73f6d567276653f9f67c3c87e9ac83fd6904fec1f730e55fafe91c7849",
+      "layout": {
+        "solcVersion": "0.8.22",
+        "storage": [
+          {
+            "contract": "BoxV2",
+            "label": "_value",
+            "type": "t_uint256",
+            "src": "../project:/contracts/BoxV2.sol:5"
+          }
+        ],
+        "types": {
+          "t_uint256": {
+            "label": "uint256"
+          }
+        },
+        "namespaces": {}
+      }
+    },
+    "dc0e0edb6c450d2ed6e8f0be7e2e29ceabf3465daa1dd18a5cddee2c6464c6fd": {
+      "address": "0x22fb43900CC8b24ec9Be6e62F4b000D0A971BdD0",
+      "txHash": "0x14bce76141dc4216486537a7001eb39d93454fd7ecca82ba852dd760f69ea688",
+      "layout": {
+        "solcVersion": "0.8.22",
+        "storage": [
+          {
+            "contract": "BoxV3",
+            "label": "_value",
+            "type": "t_uint256",
+            "src": "../project:/contracts/Box.sol:7"
+          }
+        ],
+        "types": {
+          "t_uint256": {
+            "label": "uint256"
+          }
+        },
+        "namespaces": {}
+      }
+    }
+  }
+}

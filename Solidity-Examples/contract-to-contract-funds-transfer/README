@@ -1,0 +1,15 @@
+TESTING
+- Deploy the Receiver Contract
+- Deploy the Sender Contract
+- Send funds from test wallet to Sender Contract
+- In Remix IDE, for the "sendWalletEther" method, set the value to any amount, enter the Receiver Contract address and click the "sendWalletEther" button
+    - Check the Receiver Contract balance, the value should have come from the wallet
+    - Verify that the wallet balance has changed
+
+- In Remix IDE, for the "sendContractEther" method, expand the dropdown.
+    - Set the address to the Receiver Contract address
+    - Set the value to any amount
+    - Click the "sendContractEther" button
+    - Check the Receiver Contract balance, the value should have come from the Sender Contract
+    - Verify that the Sender Contract balance has changed
+    
