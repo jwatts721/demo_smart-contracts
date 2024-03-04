@@ -1,0 +1,41 @@
+Dapp University Video Reference:
+- Smart Contract Security: Navigating External Call Exploits
+
+Attack Types:
+
+1. Reentrancy
+- When there is no check-and-effect pattern before the interaction,
+  the attacker can call the same function again before the first call is finished
+  
+  Example:
+    payable(recipient).call{value: amount}(""); // <-- this should occur after the state change
+    customers[recipient].balance = 0;
+
+  In the example above, the state change should occur before the external call.
+  If the state change occurs after the external call, the attacker can call the function again
+  before the state change occurs.
+  This will most likely happen when the attacker creates a malicious contract that calls the
+  function recursively.
+
+  To prevent this, use the check-and-effect pattern:
+
+  require(balances[msg.sender] >= amount);    // <-- check
+  balances[msg.sender] -= amount;             // <-- effect
+  payable(recipient).call{value: amount}(""); // <-- interaction, external calls should be last
+
+
+  * Additionally, you can use the ReentrancyGuard.sol library to prevent reentrancy attacks.
+  * This library uses a mutex to prevent reentrancy attacks.
+    It is available in the OpenZeppelin library.
+
+  Special Note:
+    - The check-and-effect pattern is counterintuitive because it is not the way we are used  
+      to writing code.
+
+2. Denial of Service
+- Reverting by using up all the gas, aka Gas Griefing
+- Reverting by rejecting the transaction
+- Calling a function that does not exist - this will revert the transaction
+  - should use callbacks to handle this
+- Infinite Loops
+  - Use a loop to consume all the gas
