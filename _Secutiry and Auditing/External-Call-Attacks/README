@@ -1,6 +1,8 @@
 Dapp University Video Reference:
 - Smart Contract Security: Navigating External Call Exploits
 
+SOLIDITY VERSION: 0.8.9
+
 Attack Types:
 
 1. Reentrancy
