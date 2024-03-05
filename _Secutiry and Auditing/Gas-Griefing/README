@@ -1,0 +1,19 @@
+GAS GRIEFING EXPLOITS
+
+When an attacker causes a contract to revert because not enough GAS is sent.
+This is caused by attacker contracts where the "receive" function contains malicious code. 
+This will cause all subsequent calls to the contract to fail because of a single hung transaction.
+This will in turn cause a Denial of Service against the contract. 
+
+The attacker contract uses the "receive" function to spend as much gas as possible. 
+The malicious "receive" function contains mathmatical operations to cause revert failures. 
+
+
+EIP559
+- Example Code:
+    A bid that is lower than the highest bid triggers the revert.
+    The malicious contract has code in the "receive" function to force higher gas amounts
+    which causes the contract trying to send funds to be inaccessible to new users.
+
+
+Acryonym: EOA = Externally Owned Accounts
